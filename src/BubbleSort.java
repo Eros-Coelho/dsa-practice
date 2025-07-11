@@ -11,13 +11,16 @@ public class BubbleSort {
         int size = random.nextInt(11) + 10;
         int[] array = new int[size];
 
+//        start measuring time
+        long startTime = System.nanoTime();
+
 //        populating the array with random numbers between 1 and 100
         for (int i = 0; i<size; i++){
             array[i] = random.nextInt(100);
         }
 
 //        printing the original array with toString
-        System.out.println("Original Array:");
+        System.out.println("Original Array (length: " + size + "):");
         System.out.println(Arrays.toString(array));
 
         int comparisons = 0;
@@ -45,9 +48,15 @@ public class BubbleSort {
                 break;
             }
         }
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+
         System.out.println("\nSorted Array:");
         System.out.println(Arrays.toString(array));
         System.out.println("\nComparisons: " + comparisons);
-        System.out.println("\nSwaps: " + swaps);
+        System.out.println("Swaps: " + swaps);
+        System.out.println("Execution Time (nanoseconds): " + duration);
+        System.out.println("Execution Time (milliseconds): " + (duration / 1000000.0));
     }
 }

@@ -11,6 +11,9 @@ public class SelectionSort{
         int size = random.nextInt(11)+10;
         int[] array2 = new int[size];
 
+        //        start measuring time for the sorting
+        long startTime = System.nanoTime();
+
         for (int i = 0; i < array2.length; i++){
             array2[i] = random.nextInt(100);
         }
@@ -38,9 +41,14 @@ public class SelectionSort{
             }
         }
 
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+
         System.out.println("\nSorted Array:");
         System.out.println(Arrays.toString(array2));
         System.out.println("\nComparisons: " + comparisons);
         System.out.println("\nSwaps: " + swaps);
+        System.out.println("Execution Time (nanoseconds): " + duration);
+        System.out.println("Execution Time (milliseconds): " + (duration / 1000000.0));
     }
 }
