@@ -33,36 +33,40 @@ public class SelectionSort {
                 array2[i] = element;
             } else {
                 System.out.println("Duplicate elements: " + element);
-                i--;
+                i--; //since element was duplicate, go back one to try again and get a non-duplicate one
             }
         }
 
-        System.out.println("Original Array (Length: " + size + "):");
+        System.out.println("Unsorted Array (Length: " + size + "):");
         System.out.println(Arrays.toString(array2));
 
+//        initialising variables
         int comparisons = 0;
         int swaps = 0;
 
+//        compares each element to each other element in the array to choose the smaller element
         for (int i = 0; i < array2.length - 1; i++) {
             int minIndex = i;
 
             for (int j = i + 1; j < array2.length; j++) {
-                comparisons++;
+                comparisons++; //documenting comparisons
                 if (array2[j] < array2[minIndex]) {
                     minIndex = j;
                 }
             }
-            if (minIndex != i) {
+            if (minIndex != i) { //swaps makes the actual smaller value between the two the minimum index
                 int temp = array2[i];
                 array2[i] = array2[minIndex];
                 array2[minIndex] = temp;
-                swaps++;
+                swaps++; //documenting how many swaps the program did
             }
         }
 
+//        get end time and take how many nanoseconds it took for the whole process
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
 
+//        printing sorted array and execution time (nanoseconds and milliseconds)
         System.out.println("\nSorted Array:");
         System.out.println(Arrays.toString(array2));
         System.out.println("\nComparisons: " + comparisons);

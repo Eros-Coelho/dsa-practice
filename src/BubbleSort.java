@@ -37,7 +37,7 @@ public class BubbleSort {
         }
 
 //        printing the original array with toString
-        System.out.println("Original Array (length: " + size + "):");
+        System.out.println("Unsorted Array (length: " + size + "):");
         System.out.println(Arrays.toString(array));
 
         int comparisons = 0;
