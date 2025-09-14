@@ -39,6 +39,7 @@ public class InsertionSort {
         System.out.println("Unsorted Array (Length: " + size + "):");
         System.out.println(Arrays.toString(array3));
 
+//        start checking from index 1 and comparing to the previous ones until the smallest values are on the left
         for (int i = 1; i < array3.length; i++) {
             int insertIndex = i;
             int currentValue = array3[i];
